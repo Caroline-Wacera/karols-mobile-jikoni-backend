@@ -22,5 +22,6 @@ def get_customer_profile(request, pk):
     except Customer.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    serializer = CustomerSerializer(customer)
-    return Response(serializer.data)
+    if request.method == 'GET':
+        serializer = CustomerSerializer(customer)
+        return Response(serializer.data)
