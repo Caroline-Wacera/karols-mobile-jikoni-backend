@@ -4,7 +4,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('orders/', views.place_order),
-    path('orders/<int:pk>/', views.update_order_status),
-    path('orders/<int:order_id>/payment/', views.process_payment),
+    path('', views.order_list),
+    path('<int:pk>/status/', views.update_order_status),
 ]

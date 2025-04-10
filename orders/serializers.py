@@ -1,9 +1,9 @@
 # orders/serializers.py
 
 from rest_framework import serializers
-from .models import Payment
+from .models import Order
 
-class PaymentSerializer(serializers.ModelSerializer):
+class OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Payment
-        fields = ['id', 'order', 'payment_method', 'amount', 'payment_status', 'payment_date']
+        model = Order
+        fields = ['id', 'customer', 'meal', 'quantity', 'status', 'order_date', 'delivery_date']
