@@ -1,3 +1,4 @@
+from django.contrib import admin  # Make sure this import is here
 from django.urls import path, include
 from . import views  # Import your views
 

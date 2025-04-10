@@ -5,5 +5,5 @@ from . import views
 
 urlpatterns = [
     path('customers/', views.register_customer),
-    path('customers/<int:pk>/', views.customer_profile),
+    path('customers/<int:pk>/', views.get_customer_profile),  # Update this to 'get_customer_profile'
 ]
