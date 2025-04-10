@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'meals',      # Make sure 'meals' app is added here
     'orders',     # 'orders' app is also added here
     'customers',  # Ensure 'customers' app is added here
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

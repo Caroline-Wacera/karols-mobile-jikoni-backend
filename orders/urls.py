@@ -1,8 +1,10 @@
 # orders/urls.py
-from django.urls import path
-from .views import OrderListView  # Import the OrderListView from views
 
-# Define the URL patterns for the orders app
+from django.urls import path
+from . import views
+
 urlpatterns = [
-    path('', OrderListView.as_view(), name='order-list'),  # Use '' since 'orders/' is defined in the main urls.py
+    path('orders/', views.place_order),
+    path('orders/<int:pk>/', views.update_order_status),
+    path('orders/<int:order_id>/payment/', views.process_payment),
 ]

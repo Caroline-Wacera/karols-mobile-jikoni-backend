@@ -1,8 +1,9 @@
 # orders/serializers.py
-from rest_framework import serializers
-from .models import Order  # Import the Order model from the models file
 
-class OrderSerializer(serializers.ModelSerializer):
+from rest_framework import serializers
+from .models import Payment
+
+class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Order
-        fields = '__all__'  # This will include all fields from the Order model in the serializer
+        model = Payment
+        fields = ['id', 'order', 'payment_method', 'amount', 'payment_status', 'payment_date']

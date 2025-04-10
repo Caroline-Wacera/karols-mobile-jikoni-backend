@@ -1,7 +1,9 @@
 # customers/urls.py
+
 from django.urls import path
-from .views import CustomerListView  # Import your view
+from . import views
 
 urlpatterns = [
-    path('', CustomerListView.as_view(), name='customer-list'),
+    path('customers/', views.register_customer),
+    path('customers/<int:pk>/', views.customer_profile),
 ]
