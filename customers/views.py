@@ -15,20 +15,12 @@ def register_customer(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET', 'PUT'])
-def customer_profile(request, pk):
+@api_view(['GET'])
+def get_customer_profile(request, pk):
     try:
         customer = Customer.objects.get(pk=pk)
     except Customer.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    if request.method == 'GET':
-        serializer = CustomerSerializer(customer)
-        return Response(serializer.data)
-    
-    elif request.method == 'PUT':
-        serializer = CustomerSerializer(customer, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    serializer = CustomerSerializer(customer)
+    return Response(serializer.data)
