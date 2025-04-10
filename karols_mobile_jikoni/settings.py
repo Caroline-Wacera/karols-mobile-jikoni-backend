@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'orders',     # 'orders' app is also added here
     'customers',  # Ensure 'customers' app is added here
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
